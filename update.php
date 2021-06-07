@@ -1,6 +1,6 @@
 <?php
 //print_r($_POST);
-$id= base64_decode(urldecode($_GET['usersno']));
+$id=$_GET['id'];
 
 $_POST=array_map('addslashes',$_POST);
 extract($_POST);

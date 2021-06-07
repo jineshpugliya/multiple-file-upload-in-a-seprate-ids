@@ -1,5 +1,5 @@
 <?php
-$id= base64_decode(urldecode($_GET['recordno']));
+$id=($_GET['recordno']);
 $con=mysqli_connect('localhost','root','','gallery');
 // mysqli_select_db($con,'gallery');
 mysqli_query($con,"delete from users where id=$id");

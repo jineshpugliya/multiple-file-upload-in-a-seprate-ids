@@ -1,12 +1,12 @@
 <?php
-if(isset($_GET['usersno'])){
-    $id= base64_decode(urldecode($_GET['usersno']));
+if(isset($_GET['id'])){
+    $id=($_GET['id']);
     $info=(new  Mysqli('localhost','root','','gallery'))->query("select * from users where id=$id")->fetch_assoc();
     //print_r($info);
 }
 ?>
 <h3>Edit form</h3>
-<form method="post" action="update.php?usersno=<?=urlencode(base64_encode($id));?>" >
+<form method="post" action="update.php?id=<?=$id;?>" >
 Name:<input type="text" name="name" value="<?=$info['name']??'';?>" />
 <br>
 

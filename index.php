@@ -39,7 +39,7 @@ while($info =mysqli_fetch_assoc($rs)){
 <tr>
         <td><?=$index++;?></td>
         <td>
-            <a href="edit.php?usersno=<?=urlencode(base64_encode($info['id']));?>">
+            <a href="edit.php?id=<?=$info['id'];?>">
             <?=ucfirst(strtolower($info['name']));?>
             </a>
         </td>
@@ -47,10 +47,10 @@ while($info =mysqli_fetch_assoc($rs)){
         <td><?=($info['description'])?$info['description']:'<span style="color:#999">N/A</span>';?></td>
         
         
-        <td>  <a href="edit.php?usersno=<?=urlencode(base64_encode($info['id']));?>">Edit</a>
-       <a href="#" onclick="img('imagecreate.php?recordno=<?=urlencode(base64_encode($info['id']));?>');">Image</a>
+        <td>  <a href="edit.php?id=<?=$info['id'];?>">Edit</a>
+       <a href="#" onclick="img('db2index.php?id=<?=$info['id'];?>');">Image</a>
        
-       <a href="#" onclick="del('destroy.php?recordno=<?=urlencode(base64_encode($info['id']));?>');">Delete</a></td>
+       <a href="#" onclick="del('destroy.php?recordno=<?=$info['id'];?>');">Delete</a></td>
     </tr>
 <?php } ?>
 </tbody>
